@@ -69,7 +69,7 @@
 
         vm.cloudObj = imageUploadService.getConfiguration();
 
-        vm.preRegisterHotel = (pnuevoHotel) => {
+        vm.preRegistrarHotel = (pnuevoHotel) => {
             vm.cloudObj.data.file = pnuevoHotel.photo[0];
             Upload.upload(vm.cloudObj).success((data) => {
                 vm.registerHotel(pnuevoHotel, data.url);

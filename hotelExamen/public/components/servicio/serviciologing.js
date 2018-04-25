@@ -19,7 +19,7 @@
                 success = false;
 
             for (let i = 0; i < userList.length; i++) {
-                if (userList[i].getCorreo() === pdatos.email && userList[i].getContrasenna() === pdatos.contrasenna) {
+                if (userList[i].getCorreo() === pdatos.correo && userList[i].getContrasenna() === pdatos.contrasenna) {
                     let datosCorrect = {
                         id: userList[i].getCedula(),
                         rol: userList[i].getRol()

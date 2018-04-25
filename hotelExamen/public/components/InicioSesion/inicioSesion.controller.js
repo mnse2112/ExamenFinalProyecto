@@ -10,7 +10,7 @@
 
         vm.datos = {};
 
-        vm.login = (datos) => {
+        vm.inicioSesion = (datos) => {
             let success = loginService.logIn(datos);
 
             if (success == true) {
