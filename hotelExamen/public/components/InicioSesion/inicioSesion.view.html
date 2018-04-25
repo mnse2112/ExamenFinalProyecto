@@ -1,0 +1,33 @@
+<main id="loginComponent" class="row">
+    <form class="col-md-8 mx-auto" ng-submit="vm.inicioSesion(vm.datos)" name="formInicioSesion" novalidate autocomplete="off">
+
+        <div class="container justify-content-center">
+            <h2 class="text-center">Ingrese sus datos para iniciar sesión en The Station</h2>
+
+            <div class="form-group col-md-4">
+                <label for="txtcorreo">Correo electrónico</label>
+                <input type="correo" id="txtcorreo" class="form-control" name="campocorreo" ng-model="vm.datos.correo" required>
+                <div ng-messages="formInicioSesion.campocorreo.$error">
+                    <div ng-message="required">
+                        <small class="form-text text-muted">Este campo es requerido</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="txtcontrasenna">Contraseña</label>
+                <input type="contrasenna" id="txtcontrasenna" class="form-control" name="campocontrasenna" ng-model="vm.datos.contrasenna"
+                    required>
+                <div ng-messages="formInicioSesion.campocontrasenna.$error">
+                    <div ng-message="required">
+                        <small class="form-text text-muted">Este campo es requerido</small>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <button type="submit" class="btn btn-info">Iniciar Sesión</button>
+            </div>
+        </div>
+    </form>
+    </section>
+</main>

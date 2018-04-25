@@ -1,0 +1,120 @@
+<main class="hero" id="registroClientes">
+    <section>
+        <div class="col-md-8 my-2" id="formularioRegistroCliente">
+            <div class="row mt-5">
+                <div class="col-md-12 mb-5">
+                    <h1 id="tituloPrincipal" class="text-center mt-1">Registro</h1>
+                    <p class="text-muted text-center texto-descripcion">Ingrese los datos solicitados para registrarse dentro de la plataforma de The Station</p>
+                </div>
+            </div>
+            <div class="container justify-content-center">
+                <form name="frmRegistroClientes" ng-submit="vm.registrarUsuario(vm.nuevoUsuario)" novalidate autocomplete="off">
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label for="txtNombre">Primer nombre:</label>
+                            <input type="text" class="form-control" id="txtNombre" name="campoNombre1" pattern="[ñáéíóúA-Za-z ]+" ng-model="vm.nuevoUsuario.primerNombre"
+                                required>
+                            <div ng-messages="frmRegistroClientes.campoNombre1.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                                <div ng-message="pattern">
+                                    <small class="form-text text-muted">Formato incorrecto</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="txtSegundoNombre">Segundo nombre:</label>
+                            <input type="text" class="form-control" id="txtSegundoNombre" ng-model="vm.nuevoUsuario.segundoNombre">
+                            <small class="form-text text">*Campo opcional</small>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="txtPrimerApellido">Primer apellido:</label>
+                            <input type="text" class="form-control" id="txtPrimerApellido" pattern="[ñáéíóúA-Za-z ]+" name="campoApellido1" ng-model="vm.nuevoUsuario.primerApellido"
+                                required>
+                            <div ng-messages="frmRegistroClientes.campoApellido1.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                                <div ng-message="pattern">
+                                    <small class="form-text text-muted">Formato incorrecto</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="txtSegundoApellido">Segundo apellido:</label>
+                            <input type="text" class="form-control" id="txtSegundoApellido" ng-model="vm.nuevoUsuario.segundoApellido">
+                            <small class="form-text text">*Campo opcional</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label for="txtCedula">Número de cédula:</label>
+                            <input type="number" class="form-control" id="txtCedula" name="campoCedula" ng-model="vm.nuevoUsuario.cedula" required>
+                            <div ng-messages="frmRegistroClientes.campoCedula.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                                <div ng-message="pattern">
+                                    <small class="form-text text-muted">Formato incorrecto</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="txtTelefono">Teléfono:</label>
+                            <input type="number" class="form-control" id="txtTelefono" name="campoTelefono" ng-model="vm.nuevoUsuario.telefono" required>
+                            <div ng-messages="frmRegistroClientes.campoTelefono.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="txtFechaNacimiento">Fecha de nacimiento:</label>
+                            <input type="date" class="form-control" id="txtFechaNacimiento" name="campoFechaNacimiento" ng-model="vm.nuevoUsuario.fecha"
+                                required>
+                            <div ng-messages="frmRegistroClientes.campoFechaNacimiento.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="txtEmail">Correo electrónico:</label>
+                            <input type="email" class="form-control" id="txtEmail" name="campoCorreo" ng-model="vm.nuevoUsuario.correo" required>
+                            <div ng-messages="frmRegistroClientes.campoCorreo.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label for="txtEmail">Contraseña:</label>
+                            <input type="password" class="form-control" id="txtPassword" name="campoContrasenna" ng-model="vm.nuevoUsuario.contrasenna"
+                                required>
+                            <div ng-messages="frmRegistroClientes.campoCorreo.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <label for="txtConfirmContrasenna">Confirmar contraseña</label>
+                                <input type="password" id="txtConfirmContrasenna" class="form-control" name="campoConfirmContrasenna" ng-model="vm.nuevoUsuario.contrasenna" required>
+                              </div>
+
+                    </div>
+                    <div class="mt-5">
+                        <div class="mx-auto">
+                            <button type="submit" class="btn btn-info">Registrar cliente</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</main>
