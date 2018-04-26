@@ -1,6 +1,6 @@
 (() => {
     angular
-        .module('hotelExamen')
+        .module('theStation')
         .controller('inicioSesion', inicioSesion);
 
         inicioSesion.$inject = ['$state', 'loginService'];
@@ -10,11 +10,21 @@
 
         vm.datos = {};
 
+        vm.type = 'password';
+
+        vm.changeType = (checked) => {
+            if(checked == true){
+                vm.type = 'text';
+            }else{
+                vm.type = 'password';
+            }
+        }
+
         vm.inicioSesion = (datos) => {
             let success = loginService.logIn(datos);
 
             if (success == true) {
-                $state.go('main');
+                $state.go('main.home');
             } else {
                 swal({
                     title: "Inicio de sesión fallido",

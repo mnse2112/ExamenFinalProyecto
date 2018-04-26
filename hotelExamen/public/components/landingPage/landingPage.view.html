@@ -1,21 +1,70 @@
-<div class="container-fluid">
-    <div class="row" id="header">
-        <div class="col-md-7 mx-auto mt-6 text-center">
-            <div>
-                <img src="./../../sources/imgs/logo.png" width="670" class="img-fluid">
-            </div>
-            <div>
-                <p class="text-white title">
-                    <strong>¿Sos un amante de viajar?</strong> Ayúdanos a darle algunos consejos a otros viajeros gracias a
-                    <strong>tus experiencias y aventuras</strong>.
-                </p>
-            </div>
-            <div>
+<navegacion-Principal></navegacion-Principal>
+<main id="landingPageComponent">
+    <a class="top-fixed LiveHelpButton" href="" ng-click="vm.toTheTop()">
+        <div class="tipotop">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </a>
+    <section class="container-fluid">
+        <div class="row" id="banner">
+            <div class="col-md-7 mx-auto mt-6 mb-5 text-center">
+                <div>
+                    <img src="./../../sources/imgs/logo.png" width="470" class="img-fluid">
+                </div>
+                <div>
+                    <p class="text-white">
+                        <strong>¿Sos un amante de viajar?</strong> Ayúdanos a darle algunos consejos a otros viajeros gracias a
+                        <strong>tus experiencias y aventuras</strong>.
+                    </p>
+                </div>
+                <div>
                     <img src="./../../sources/imgs/estrellas.png" width="300" class="img-fluid">
-            </div>
-            <div>
-                <button class= "Tittle text-white mt-5">Probálo</button>
+                </div>
+                <div>
+                    <a href="" ui-sref="registroUsuarios" class="btn btn-outline-light btn-lg mt-5">Probálo</a>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+
+    <section class="container-fluid">
+        <div class="row my-5" id="section-2">
+            
+            <div class="col-md-6 mx-auto">
+                <h2 class="text-center my-5">¡Comparte tu opinión y gana!</h2>
+
+                <p class="text-justify">Estamos interesados ​​en conocer la experiencia de las almas aventureras y aquellos que buscan la paz</p>
+
+                <p class="text-justify">Cuéntanos tu experiencia en diferentes hoteles en Costa Rica y deja que otros turistas, tanto nacionales como extranjeros, disfruten de las riquezas de nuestro país.</p>
+
+                <p class="text-justify">Conviértase en un cliente <strong>premium</strong> al darnos calificaciones de los hoteles que ha visitado y gane <strong>puntos canjeables</strong> por descuentos en su próxima estadía en el hotel.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid">
+        <div class="row" id="section-3">
+
+            <div class="col-md-2">
+                <img src="../../sources/imgs/icons/iconFood.png" width="100" alt="">
+            </div>
+
+            <div class="col-md-2">
+                <img src="../../sources/imgs/icons/iconBed.png" width="100" alt="">
+            </div>
+
+            <div class="col-md-2">
+                <img src="../../sources/imgs/icons/iconClean.png" width="100" alt="">
+            </div>
+
+            <div class="col-md-2">
+                <img src="../../sources/imgs/icons/iconCustomer.png" width="100" alt="">
+            </div>
+
+            <div class="col-md-2">
+                <img src="../../sources/imgs/icons/iconBuildin.png" width="100" alt="">
+            </div>
+            
+        </div>
+    </section>
+</main>

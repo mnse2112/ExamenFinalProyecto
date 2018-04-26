@@ -1,7 +1,7 @@
 (()=>{
     'use strict';
     angular
-    .module ('hotelExamen')
+    .module ('theStation')
     .factory ('dataStorageFactory', dataStorageFactory);
 
     function dataStorageFactory(){
@@ -42,7 +42,7 @@
 
             request.done((res) => {
                 response = res.success;
-                console.log('Petición realizada con éxito');
+                console.log(res.msj);
             });
             request.fail((error) => {
                 response = error;
@@ -65,8 +65,6 @@
             });
 
             request.done ((userListBD) => {
-                console.log('Datos que vienen desde la base de datos')
-                console.log (userListBD);
                 listaUsuarios = userListBD;
             })
 
@@ -79,7 +77,30 @@
 
         function _setHotelData(hotelData) {}
 
-        function _getHotelData() {}
+        function _getHotelData(){
+            let listaHoteles = [];
+            
+            let request = $.ajax({
+                url: 'http://localhost:4000/api/get_all_hotels',
+                type: 'get',
+                contentType: 'aplication/x-www-form-urlencoded;charset=utf-8',
+                dataType: 'json',
+                async: false,
+                data: {}
+            });
+
+            request.done ((hotelsListBD) => {
+                console.log('Datos que vienen desde la base de datos')
+                console.log (hotelsListBD);
+                listaHoteles = hotelsListBD;
+            })
+
+            request.fail(()=> {
+                listaHoteles = [];
+                console.log ('Ocurrió un error');
+            });
+            return listaHoteles; 
+        }
 
         //-----------------------Login Function-----------------------------------------------
 

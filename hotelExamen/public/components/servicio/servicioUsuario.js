@@ -2,7 +2,7 @@
     'use strict'
     'use strict';
     angular
-      .module('hotelExamen')
+      .module('theStation')
       .service('servicioUsuarios', servicioUsuarios);
 
     servicioUsuarios.$inject = ['$http','$log', 'dataStorageFactory']
@@ -40,7 +40,7 @@
 
             userData.forEach(obj => {
                 if (obj.rol == 1) {
-                    let newAdmin = Object.assign(new Admin(), obj);
+                    let newAdmin = Object.assign(new Administrador(), obj);
                     listaUsuarios.push(newAdmin);
                 } else {
                     let newClient = Object.assign(new Clientes(), obj);

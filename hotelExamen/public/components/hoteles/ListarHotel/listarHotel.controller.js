@@ -1,7 +1,7 @@
 (() => {
     'use strict';
     angular
-      .module('hotelExamen')
+      .module('theStation')
       .controller('controladorListarHotel', controladorRegistrarCliente);
   
       controladorRegistrarCliente.$inject = ['$http', '$stateParams', '$state', 'servicioHotel']; 

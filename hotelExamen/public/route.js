@@ -9,15 +9,22 @@
     function routing($stateProvider, $urlRouterProvider, $oclazyLoad) {
         $stateProvider
             .state('landingPage', {
-                url: '/landingpage',
+                url: '/',
                 templateUrl: './components/landingPage/landingPage.view.html',
                 data: {
                     pageTitle: 'The Station'
                 },
+                resolve: {
+                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
+                        return $ocLazyLoad.load('./components/landingPage/landingPage.controller.js')
+                    }]
+                },
+                controller: 'landingPageController',
+                controllerAs: 'vm'
             })
 
-            .state('InicioSesion', {
-                url: '/InicioSesion',
+            .state('inicioSesion', {
+                url: '/login',
                 templateUrl: './components/InicioSesion/inicioSesion.view.html',
                 data: {
                     pageTitle: 'Inicio de Sesión'
@@ -30,6 +37,48 @@
                 controller: 'inicioSesion',
                 controllerAs: 'vm'
             })
+
+            .state('registroUsuarios', {
+                url: '/registerUser',
+                templateUrl: './components/usuarios/Cliente/registrarCliente/registrarCliente.view.html',
+                data: {
+                    pageTitle: 'Registro de usuarios | The Station'
+                },
+                resolve: {
+                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
+                        return $ocLazyLoad.load('./components/usuarios/Cliente/registrarCliente/registrarCliente.controller.js')
+                    }]
+                },
+                controller: 'controladorRegistrarCliente',
+                controllerAs: 'vm'
+            })
+
+            .state('main', {
+                url: '/main',
+                templateUrl: './components/main/main.view.html',
+                resolve: {
+                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
+                        return $ocLazyLoad.load('./components/main/main.controller.js')
+                    }]
+                },
+                controller: 'controladorMain',
+                controllerAs: 'vm'
+            })
+
+            .state('main.home', {
+                url: '/home',
+                templateUrl: './components/main/main.view.html',
+                data: {
+                    pageTitle: 'Pagina principal | The Station'
+                }
+            })
+
+
+
+
+
+
+
 
             .state('listarHotel', {
                 url: '/ListarHotel',
@@ -84,21 +133,6 @@
                 controllerAs: 'vm'
             })
 
-            .state('main', {
-                url: '/main',
-                templateUrl: './components/main/main.view.html',
-                data: {
-                    pageTitle: 'Perfil'
-                },
-                resolve: {
-                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
-                        return $ocLazyLoad.load('./components/main/main.controller.js')
-                    }]
-                },
-                controller: '',
-                controllerAs: 'vm'
-            })
-
             .state('modificarAdministradores', {
                 url: '/modificarAdministradores',
                 templateUrl: './components/usuarios/Administrador/modificarAdmin/modificarUsuario.view.html',
@@ -122,20 +156,6 @@
                 },
             })
 
-            .state('registrarAdministradores', {
-                url: '/registrarAdministradores',
-                templateUrl: './components/usuarios/Administrador/registrarAdmin/registrarUsuario.view.html',
-                data: {
-                    pageTitle: 'Registrar Administrador'
-                },
-                resolve: {
-                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
-                        return $ocLazyLoad.load('./components/usuarios/Administrador/registrarAdmin/registrarUsuario.controller.js')
-                    }]
-                },
-                controller: '',
-                controllerAs: 'vm'
-            })
 
             .state('listarClientes', {
                 url: '/listarClientes',
@@ -176,20 +196,7 @@
                 },
             })
 
-            .state('registrarCliente', {
-                url: '/registrarCliente',
-                templateUrl: './components/usuarios/Cliente/registrarCliente/registrarCliente.view.html',
-                data: {
-                    pageTitle: 'Registrar'
-                },
-                resolve: {
-                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
-                        return $ocLazyLoad.load('./components/usuarios/Cliente/registrarCliente/registrarCliente.controller.js')
-                    }]
-                },
-                controller: 'controladorRegistrarCliente',
-                controllerAs: 'vm'
-            })
+
 
         $urlRouterProvider.otherwise('/');
     }

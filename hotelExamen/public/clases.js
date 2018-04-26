@@ -79,9 +79,10 @@ class Clientes extends Usuario{
 }
 
 class Hotel {
-    constructor(pid, pcnombreHotel, platitud, plongitud, pprovincia, pcanton, pdistrito, pdireccion, ptelefonoServ, pcorreoServ, ptelefonoReserv, pcorreoReserv){
+    constructor(pid, pcnombreHotel, pfoto, platitud, plongitud, pprovincia, pcanton, pdistrito, pdireccion, ptelefonoServ, pcorreoServ, ptelefonoReserv, pcorreoReserv){
         this._id = pid;
         this.nombreHotel = pcnombreHotel;
+        this.foto = pfoto;
         this.latitud = platitud;
         this.longitud = plongitud;
         this.provincia = pprovincia;

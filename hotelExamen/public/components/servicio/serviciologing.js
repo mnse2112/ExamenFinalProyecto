@@ -1,7 +1,7 @@
 (() => {
     'use strict';
     angular
-        .module('hotelExamen')
+        .module('theStation')
         .service('loginService', loginService);
 
     loginService.$inject = ['servicioUsuarios', 'dataStorageFactory'];
@@ -50,11 +50,11 @@
 
 
         function obtenerDatosUsuarioActivo(pcedula) {
-            let userList = userService.getUsers(),
+            let userList = servicioUsuarios.getUsuario(),
                 userData;
 
             for (let i = 0; i < userList.length; i++) {
-                if (userList[i].getcedula() == pcedula) {
+                if (userList[i].getCedula() == pcedula) {
                     userData = userList[i];
                 }
             };

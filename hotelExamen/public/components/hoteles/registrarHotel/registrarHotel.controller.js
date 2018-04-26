@@ -1,12 +1,12 @@
 (() => {
     'use strict';
     angular
-        .module('hotelExamen')
+        .module('theStation')
         .controller('ControladorRegistrarHotel', ControladorRegistrarHotel);
 
-        ControladorRegistrarHotel.$inject = ['$http', 'NgMap'];
+        ControladorRegistrarHotel.$inject = ['$http', 'NgMap', 'ServicioHotel', 'servicioImagen', 'Upload'];
 
-    function ControladorRegistrarHotel($http, NgMap) {
+    function ControladorRegistrarHotel($http, NgMap, ServicioHotel, servicioImagen, Upload) {
         const vm = this;
 
         vm.provincias = $http({
@@ -67,10 +67,10 @@
 
         vm.nuevoHotel = {};
 
-        vm.cloudObj = imageUploadService.getConfiguration();
+        vm.cloudObj = servicioImagen.getConfiguration();
 
         vm.preRegistrarHotel = (pnuevoHotel) => {
-            vm.cloudObj.data.file = pnuevoHotel.photo[0];
+            vm.cloudObj.data.file = pnuevoHotel.foto[0];
             Upload.upload(vm.cloudObj).success((data) => {
                 vm.registerHotel(pnuevoHotel, data.url);
             });
@@ -84,7 +84,7 @@
 
             let nuevoHotel = Object.assign(new Hotel(), pnuevoHotel);
 
-            let success = hotelService.setHotel(nuevoHotel);
+            let success = ServicioHotel.setHotel(nuevoHotel);
 
             if (success == true) {
                 swal({
