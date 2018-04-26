@@ -67,11 +67,32 @@
 
             .state('main.home', {
                 url: '/home',
-                templateUrl: './components/main/main.view.html',
+                templateUrl: './components/main/principal.main/home.view.html',
                 data: {
                     pageTitle: 'Pagina principal | The Station'
                 }
             })
+
+            .state('main.registrarHotel', {
+                url: '/registerHotel',
+                templateUrl: './components/hoteles/registrarHotel/registrarHotel.view.html',
+                data: {
+                    pageTitle: 'Registro de hoteles | The Station'
+                },
+                resolve: {
+                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
+                        return $ocLazyLoad.load('./components/hoteles/registrarHotel/registrarHotel.controller.js')
+                    }]
+                },
+                controller: 'ControladorRegistrarHotel',
+                controllerAs: 'vm'
+            })
+
+
+
+
+
+
 
 
 
@@ -118,43 +139,9 @@
                 },
             })
 
-            .state('registrarHotel', {
-                url: '/registrarHotel',
-                templateUrl: './components/hoteles/registrarHotel/registrarHotel.view.html',
-                data: {
-                    pageTitle: 'Registrar hotel'
-                },
-                resolve: {
-                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
-                        return $ocLazyLoad.load('./components/hoteles/registrarHotel/registrarHotel.controller.js')
-                    }]
-                },
-                controller: 'ControladorRegistrarHotel',
-                controllerAs: 'vm'
-            })
+            
 
-            .state('modificarAdministradores', {
-                url: '/modificarAdministradores',
-                templateUrl: './components/usuarios/Administrador/modificarAdmin/modificarUsuario.view.html',
-                data: {
-                    pageTitle: 'Editar Perfil'
-                },
-                resolve: {
-                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
-                        return $ocLazyLoad.load('./components/usuarios/Administrador/modificarAdmin/modificarUsuario.controller.js')
-                    }]
-                },
-                controller: '',
-                controllerAs: 'vm'
-            })
-
-            .state('Perfil', {
-                url: '/Perfil',
-                templateUrl: './components/usuarios/Administrador/perfilAdmin/perfilUsuario.view.html',
-                data: {
-                    pageTitle: 'Editar Perfil'
-                },
-            })
+            
 
 
             .state('listarClientes', {

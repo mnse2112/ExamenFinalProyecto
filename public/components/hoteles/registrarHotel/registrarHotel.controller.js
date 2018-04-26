@@ -80,7 +80,7 @@
             pnuevoHotel._id = 0;
             pnuevoHotel.latitude = vm.current[0];
             pnuevoHotel.longitude = vm.current[1];
-            pnuevoHotel.photo = urlImage;
+            pnuevoHotel.foto = urlImage;
 
             let nuevoHotel = Object.assign(new Hotel(), pnuevoHotel);
 

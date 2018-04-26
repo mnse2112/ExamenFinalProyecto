@@ -1,5 +1,5 @@
 class Usuario {
-    constructor(pcedula, pprimerNombre, psegundoNombre, pprimerApellido, psegundoApellido, pcorreo, pcontrasenna, prol){
+    constructor(pcedula, pprimerNombre, psegundoNombre, pprimerApellido, psegundoApellido, pcorreo, pcontrasenna, prol) {
         this.primerNombre = pprimerNombre;
         this.segundoNombre = psegundoNombre;
         this.primerApellido = pprimerApellido;
@@ -10,77 +10,78 @@ class Usuario {
         this.rol = prol;
     }
 
-    getRol(){
+    getRol() {
         return this.rol;
     }
 
-    getCorreo(){
+    getCorreo() {
         return this.correo;
     }
 
-    getContrasenna(){
+    getContrasenna() {
         return this.contrasenna;
     }
 
-    getCedula(){
+    getCedula() {
         return this.cedula;
     }
 
-    setPrimerNombre(pnuevoPrimerNombre){
+    setPrimerNombre(pnuevoPrimerNombre) {
         this.primerNombre = pnuevoPrimerNombre;
     }
 
-    setSegundoNombre(pnuevoSegundoNombre){
+    setSegundoNombre(pnuevoSegundoNombre) {
         this.segundoNombre = pnuevoSegundoNombre;
     }
 
-    setPrimerApellido(pnuevoPrimerApellido){
+    setPrimerApellido(pnuevoPrimerApellido) {
         this.primerApellido = pnuevoPrimerApellido;
     }
 
-    setSegundoApellido(pnuevoSegundoApellido){
+    setSegundoApellido(pnuevoSegundoApellido) {
         this.segundoApellido = pnuevoSegundoApellido;
     }
 }
 
-class Administrador extends Usuario{
-    constructor(pcedula, pprimerNombre, psegundoNombre, pprimerApellido, psegundoApellido, pcorreo, pcontrasenna, prol){
+class Administrador extends Usuario {
+    constructor(pcedula, pprimerNombre, psegundoNombre, pprimerApellido, psegundoApellido, pcorreo, pcontrasenna, prol) {
         super(pcedula, pprimerNombre, psegundoNombre, pprimerApellido, psegundoApellido, pcorreo, pcontrasenna, prol);
     }
 }
 
-class Clientes extends Usuario{
-    constructor(pcedula, pprimerNombre, psegundoNombre, pprimerApellido, psegundoApellido, pcorreo, pcontrasenna, prol, pedad, ptelefono){
+class Clientes extends Usuario {
+    constructor(pcedula, pprimerNombre, psegundoNombre, pprimerApellido, psegundoApellido, pcorreo, pcontrasenna, prol, pedad, ptelefono) {
         super(pcedula, pprimerNombre, psegundoNombre, pprimerApellido, psegundoApellido, pcorreo, pcontrasenna, prol)
-        
+
         this.edad = pedad;
         this.telefono = ptelefono;
     }
 
-    getEdad(){
+    getEdad() {
         return this.edad;
     }
-    
-    getTelefono(){
+
+    getTelefono() {
         return this.telefono;
     }
 
-    getEdad(){
+    getEdad() {
         return this.edad;
     }
 
-    setTelefono(ptelefono){
+    setTelefono(ptelefono) {
         this.telefono = pnuevoTelefono;
     }
 
-    setEdad(){
+    setEdad() {
         this.edad = pnuevoEdad;
     }
 }
 
 class Hotel {
-    constructor(pid, pcnombreHotel, pfoto, platitud, plongitud, pprovincia, pcanton, pdistrito, pdireccion, ptelefonoServ, pcorreoServ, ptelefonoReserv, pcorreoReserv){
+    constructor(pid, ptipoHotel, pcnombreHotel, pfoto, platitud, plongitud, pprovincia, pcanton, pdistrito, pdireccion, ptelefonoServ, pcorreoServ, ptelefonoReserv, pcorreoReserv) {
         this._id = pid;
+        this.tipoHotel = ptipoHotel;
         this.nombreHotel = pcnombreHotel;
         this.foto = pfoto;
         this.latitud = platitud;
@@ -92,95 +93,103 @@ class Hotel {
         this.telefonoServicioCliente = ptelefonoServ;
         this.correoServicioCliente = pcorreoServ;
         this.telefonoReservacion = ptelefonoReserv;
-        this.correoReservacion = pcorreoReserv; 
-        }
+        this.correoReservacion = pcorreoReserv;
+    }
 
-    getId(){
+    getId() {
         return this._id;
     }
 
-    getNombreHotel(){
+    getTipoHotel() {
+        return this.tipoHotel;
+    }
+
+    getNombreHotel() {
         return this.nombreHotel;
     }
 
-    getMapLocation(){
+    getMapLocation() {
         return `$(this.latitud), $(this.longitud)`;
     }
 
-    getProvincia(){
+    getProvincia() {
         return this.provincia;
     }
 
-    getCanton(){
+    getCanton() {
         return this.canton;
     }
 
-    getDistrito(){
-        return this.distrito ;
+    getDistrito() {
+        return this.distrito;
     }
 
-    getDireccion(){
+    getDireccion() {
         return this.direccion;
     }
 
-    getTelefonoServicio(){
+    getTelefonoServicio() {
         return this.telefonoServicioCliente;
     }
 
-    getCorreoServicio(){
+    getCorreoServicio() {
         return this.correoServicioCliente;
     }
 
-    getTelefonoReservacion(){
+    getTelefonoReservacion() {
         return this.telefonoReservacion;
     }
 
-    getCorreoReservacion(){
+    getCorreoReservacion() {
         return this.correoReservacion;
     }
 
-    setNombreHotel(pnuevoNombreHotel){
+    setTipoHotel(pnuevotipoHotel) {
+        this.tipoHotel = pnuevotipoHotel;
+    }
+
+    setNombreHotel(pnuevoNombreHotel) {
         this.name = pNuevoNombreHotel;
     }
 
-    setLatitud(pnuevolatitud){
+    setLatitud(pnuevolatitud) {
         this.latitud = pnuevolatitud;
     }
 
-    setLongitud(pnuevolongitud){
+    setLongitud(pnuevolongitud) {
         this.longitud = pnuevolongitud;
     }
 
-    setProvincia(pnuevoprovincia){
+    setProvincia(pnuevoprovincia) {
         this.provincia = pnuevoprovincia;
     }
 
-    setCanton (pnuevoCanton){
+    setCanton(pnuevoCanton) {
         this.canton = pnuevoCanton;
     }
-    
-    setDistrito (pnuevoDistrito){
+
+    setDistrito(pnuevoDistrito) {
         this.distrito = pnuevoDistrito;
     }
 
-    setDireccion (){
+    setDireccion() {
         this.direccion = pnuevaDirección;
     }
 
-    setTelefonoServicio (pnuevoServicioCliente){
+    setTelefonoServicio(pnuevoServicioCliente) {
         this.telefonoServicioCliente = pnuevoTelefonoServicioCliente;
     }
 
-    setCorreoServicio (pnuevoCorreoServicioCliente){
+    setCorreoServicio(pnuevoCorreoServicioCliente) {
         this.correoServicioCliente = pnuevoCorreoServicioCliente;
     }
 
-    setTelefonoReservaciones (pnuevoTelefonoReservaciones){
+    setTelefonoReservaciones(pnuevoTelefonoReservaciones) {
         this.telefonoReservacion = pnuevoTelefonoReservaciones;
     }
 
-    setCorreoReservaciones (){
+    setCorreoReservaciones() {
         this.correoReservacion = pnueviCorreoReservaciones;
     }
 
-    }
+}
