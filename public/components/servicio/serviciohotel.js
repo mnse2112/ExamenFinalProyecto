@@ -1,8 +1,8 @@
 (() => {
     'use strict'
     angular
-    .module('theStation')
-    .service('ServicioHotel', ServicioHotel);
+        .module('theStation')
+        .service('ServicioHotel', ServicioHotel);
 
     ServicioHotel.$inject = ['$http', '$log', 'dataStorageFactory']
 
@@ -10,33 +10,33 @@
         const publicUserAPI = {
             setHotel: _setHotel,
             updateHotel: _updateHotel,
-            getHotel : _getHotel,
+            getHotel: _getHotel,
             getHotelesPorTipo: _getHotelesPorTipo,
             getHotelPorId: _getHotelPorId
         }
         return publicUserAPI;
 
-        function _setHotel(hotelData){
+        function _setHotel(hotelData) {
             let hotelList = _getHotel(),
                 repeat = false,
                 success;
 
             for (let i = 0; i < hotelList.length; i++) {
-                if(hotelList[i].getId() === hotelData.getId()){
+                if (hotelList[i].getId() === hotelData.getId()) {
                     repeat = true;
                 }
             }
 
-            if(repeat == false){
+            if (repeat == false) {
                 success = dataStorageFactory.setHotelData(hotelData);
-            }else{
+            } else {
                 success = false;
             }
 
             return success;
         }
 
-        function _getHotel(){
+        function _getHotel() {
             let hotelData = dataStorageFactory.getHotelData(),
                 hotelList = [];
 
@@ -78,5 +78,6 @@
             }
             return hotel;
         }
+
     }
 })();

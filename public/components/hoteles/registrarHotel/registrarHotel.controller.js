@@ -78,9 +78,11 @@
 
         vm.registerHotel = (pnuevoHotel, urlImage) => {
             pnuevoHotel._id = 0;
-            pnuevoHotel.latitude = vm.current[0];
-            pnuevoHotel.longitude = vm.current[1];
+            pnuevoHotel.latitud = vm.current[0];
+            pnuevoHotel.longitud = vm.current[1];
             pnuevoHotel.foto = urlImage;
+
+            console.log(pnuevoHotel);
 
             let nuevoHotel = Object.assign(new Hotel(), pnuevoHotel);
 
@@ -91,7 +93,7 @@
             if (success == true) {
                 swal({
                     title: "Registro exitoso",
-                    text: "El hotel se ha registrado correctamente",
+                    text: "El usuario se ha registrado correctamente",
                     icon: "success",
                     button: "Aceptar"
                 });

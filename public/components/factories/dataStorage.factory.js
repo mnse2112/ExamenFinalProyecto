@@ -178,6 +178,7 @@
             return response;
         }
 
+
         function _setSession(value) {
             let response = true;
             sessionStorage.setItem('session', JSON.stringify(value));

@@ -1,6 +1,7 @@
 const HotelModel = require('./hotel.model');
 
 module.exports.registerHotel = (req, res) => {
+    console.log(req);
     var newHotel = Object.assign(new HotelModel(), req.body);
 
     newHotel.save((err) => {
