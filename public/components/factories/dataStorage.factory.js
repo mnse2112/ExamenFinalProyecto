@@ -138,7 +138,6 @@
             return listaHoteles; 
         }
 
-        //-----------------------Login Function-----------------------------------------------
 
         function _setSession(value) {
             let response = true;

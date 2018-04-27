@@ -84,12 +84,14 @@
 
             let nuevoHotel = Object.assign(new Hotel(), pnuevoHotel);
 
+            console.log(nuevoHotel);
+
             let success = ServicioHotel.setHotel(nuevoHotel);
 
             if (success == true) {
                 swal({
                     title: "Registro exitoso",
-                    text: "El usuario se ha registrado correctamente",
+                    text: "El hotel se ha registrado correctamente",
                     icon: "success",
                     button: "Aceptar"
                 });

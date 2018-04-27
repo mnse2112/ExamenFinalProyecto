@@ -4,9 +4,9 @@
       .module('theStation')
       .controller('controladorListarHotel', controladorRegistrarCliente);
   
-      controladorRegistrarCliente.$inject = ['$http', '$stateParams', '$state', 'servicioHotel']; 
+      controladorListarHotel.$inject = ['$http', '$stateParams', '$state', 'servicioHotel']; 
   
-    function controladorRegistrarCliente($http, $stateParams, $state, servicioHotel) {
+    function controladorListarHotel($http, $stateParams, $state, servicioHotel) {
       let vm = this;
   
       vm.provincias = $http({
