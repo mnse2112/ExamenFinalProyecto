@@ -69,8 +69,15 @@
                 url: '/home',
                 templateUrl: './components/main/principal.main/home.view.html',
                 data: {
-                    pageTitle: 'Pagina principal | The Station'
-                }
+                    pageTitle: 'Pagina principal'
+                },
+                resolve: {
+                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
+                        return $ocLazyLoad.load('./components/main/main.controller.js')
+                    }]
+                },
+                controller: 'controladorMain',
+                controllerAs: 'vm'
             })
 
             .state('main.registrarHotel', {
@@ -88,21 +95,8 @@
                 controllerAs: 'vm'
             })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-            .state('listarHotel', {
-                url: '/ListarHotel',
+            .state('main.listarHotel', {
+                url: '/listHotel',
                 templateUrl: './components/hoteles/ListarHotel/listarHotel.view.html',
                 data: {
                     pageTitle: 'Lista de Hoteles'
@@ -112,9 +106,33 @@
                         return $ocLazyLoad.load('./components/hoteles/ListarHotel/listarHotel.controller.js')
                     }]
                 },
+                params: {
+                    idHotel: ''
+                },
                 controller: 'controladorListarHotel',
                 controllerAs: 'vm'
             })
+
+            .state('main.listarUsuarios', {
+                url: '/listUsers',
+                templateUrl: './components/usuarios/Cliente/listarCliente/listarCliente.view.html',
+                data: {
+                    pageTitle: 'Listar Clientes'
+                },
+                resolve: {
+                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
+                        return $ocLazyLoad.load('./components/usuarios/Cliente/listarCliente/listarCliente.controller.js')
+                    }]
+                },
+                params: {
+                    idCliente: ''
+                },
+                controller: 'controladorListaUsuarios',
+                controllerAs: 'vm'
+            })
+
+
+
 
             .state('modificarHotel', {
                 url: '/modificarHotel',
@@ -137,28 +155,7 @@
                 data: {
                     pageTitle: 'Perfil'
                 },
-            })
-
-            
-
-            
-
-
-            .state('listarClientes', {
-                url: '/listarClientes',
-                templateUrl: './components/usuarios/Cliente/listarCliente/listarCliente.view.html',
-                data: {
-                    pageTitle: 'Listar Clientes'
-                },
-                resolve: {
-                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
-                        return $ocLazyLoad.load('./components/usuarios/Cliente/listarCliente/listarCliente.controller.js')
-                    }]
-                },
-                controller: '',
-                controllerAs: 'vm'
-            })
-
+            }) 
 
             .state('modificarClientes', {
                 url: '/modificarClientes',

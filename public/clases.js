@@ -14,6 +14,17 @@ class Usuario {
         return this.rol;
     }
 
+    getTipoRol(){
+        let rol = this.getRol(),
+            nombre;
+        if(rol == 1){
+            nombre = 'Administrador';
+        }else{
+            nombre = 'Cliente';
+        }
+        return nombre;
+    }
+
     getCorreo() {
         return this.correo;
     }
@@ -24,6 +35,18 @@ class Usuario {
 
     getCedula() {
         return this.cedula;
+    }
+
+    getPrimerNombre(){
+        return this.primerNombre;
+    }
+
+    getPrimerApellido(){
+        return this.primerApellido;
+    }
+
+    getSegundoApellido(){
+        return this.segundoApellido;
     }
 
     setPrimerNombre(pnuevoPrimerNombre) {
@@ -100,6 +123,10 @@ class Hotel {
         return this._id;
     }
 
+    getFoto(){
+        return this.foto;
+    }
+    
     getTipoHotel() {
         return this.tipoHotel;
     }

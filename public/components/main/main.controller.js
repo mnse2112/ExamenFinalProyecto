@@ -7,14 +7,17 @@
         controladorMain.$inject = ['$state', 'loginService'];
 
     function controladorMain($state, loginService) {
+        const vm = this;
 
         const userAuth = loginService.getAuthUser();
 
-        console.log(userAuth);
 
         if(!userAuth){
             $state.go('inicioSesion');
         }
 
+        vm.user = userAuth;
+
+        vm.userName = userAuth.getPrimerNombre();
     }
 })();
