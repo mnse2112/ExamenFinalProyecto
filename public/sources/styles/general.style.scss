@@ -54,11 +54,17 @@ body {
   .mt-6 {
     margin-top: 11rem !important;
   }
+  .ml-6{
+    padding-left: 20rem !important;
+  }
   .bg-black{
     background-color: $rest-color;
   }
   .text-white {
     color: $white-color;
+  }
+  .text-black {
+    color: $rest-color;
   }
   .title {
     font-size: 28px;

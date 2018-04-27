@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="txtNombre">Primer nombre:</label>
-                            <input type="text" class="form-control" id="txtNombre" name="campoNombre1" pattern="[ñáéíóúA-Za-z ]+" ng-model="vm.nuevoUsuario.primerNombre"
+                            <input type="text" class="form-control" id="txtNombre" name="campoNombre1" required pattern="[ñáéíóúA-Za-z ]+" ng-model="vm.nuevoUsuario.primerNombre"
                                 required>
                             <div ng-messages="frmRegistroClientes.campoNombre1.$error" role="alert">
                                 <div ng-message="required">
@@ -42,7 +42,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="txtPrimerApellido">Primer apellido:</label>
-                            <input type="text" class="form-control" id="txtPrimerApellido" pattern="[ñáéíóúA-Za-z ]+" name="campoApellido1" ng-model="vm.nuevoUsuario.primerApellido"
+                            <input type="text" class="form-control" id="txtPrimerApellido" pattern="[ñáéíóúA-Za-z ]+" name="campoApellido1" required ng-model="vm.nuevoUsuario.primerApellido"
                                 required>
                             <div ng-messages="frmRegistroClientes.campoApellido1.$error" role="alert">
                                 <div ng-message="required">
@@ -62,7 +62,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="txtCedula">Número de cédula:</label>
-                            <input type="number" class="form-control" id="txtCedula" name="campoCedula" ng-model="vm.nuevoUsuario.cedula" required>
+                            <input type="number" class="form-control" id="txtCedula" name="campoCedula" required ng-model="vm.nuevoUsuario.cedula" required>
                             <div ng-messages="frmRegistroClientes.campoCedula.$error" role="alert">
                                 <div ng-message="required">
                                     <small class="form-text text-info">Este campo es requerido</small>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="txtTelefono">Teléfono:</label>
-                            <input type="number" class="form-control" id="txtTelefono" name="campoTelefono" ng-model="vm.nuevoUsuario.telefono" required>
+                            <input type="number" class="form-control" id="txtTelefono" name="campoTelefono" required ng-model="vm.nuevoUsuario.telefono" required>
                             <div ng-messages="frmRegistroClientes.campoTelefono.$error" role="alert">
                                 <div ng-message="required">
                                     <small class="form-text text-info">Este campo es requerido</small>
@@ -85,7 +85,7 @@
                         <div class = "row">
                         <div class="form-group col-md-6">
                             <label for="txtFechaNacimiento">Fecha de nacimiento:</label>
-                            <input type="date" class="form-control" id="txtFechaNacimiento" name="campoFechaNacimiento" ng-model="vm.nuevoUsuario.fecha"
+                            <input type="date" class="form-control" id="txtFechaNacimiento" name="campoFechaNacimiento" required ng-model="vm.nuevoUsuario.fecha"
                                 required>
                             <div ng-messages="frmRegistroClientes.campoFechaNacimiento.$error" role="alert">
                                 <div ng-message="required">
@@ -95,7 +95,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="txtEmail">Correo electrónico:</label>
-                            <input type="email" class="form-control" id="txtEmail" name="campoCorreo" ng-model="vm.nuevoUsuario.correo" required>
+                            <input type="email" class="form-control" id="txtEmail" name="campoCorreo" required ng-model="vm.nuevoUsuario.correo" required>
                             <div ng-messages="frmRegistroClientes.campoCorreo.$error" role="alert">
                                 <div ng-message="required">
                                     <small class="form-text text-info">Este campo es requerido</small>
@@ -106,7 +106,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="txtEmail">Contraseña:</label>
-                            <input type="password" class="form-control" id="txtPassword" name="campoContrasenna" ng-model="vm.nuevoUsuario.contrasenna"
+                            <input type="password" class="form-control" id="txtPassword" name="campoContrasenna" required ng-model="vm.nuevoUsuario.contrasenna"
                                 required>
                             <div ng-messages="frmRegistroClientes.campoCorreo.$error" role="alert">
                                 <div ng-message="required">
@@ -116,7 +116,7 @@
                         </div>
                         <div class="form-group col-md-6">
                                 <label for="txtConfirmContrasenna">Confirmar contraseña</label>
-                                <input type="password" id="txtConfirmContrasenna" class="form-control" name="campoConfirmContrasenna" ng-model="vm.nuevoUsuario.contrasenna" required>
+                                <input type="password" id="txtConfirmContrasenna" class="form-control" name="campoConfirmContrasenna" required  ng-model="vm.nuevoUsuario.contrasenna" required>
                               </div>
                     </div>
                     <div class="row">

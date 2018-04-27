@@ -10,6 +10,7 @@
             getUserData : _getUserData,
             setHotelData: _setHotelData,
             getHotelData: _getHotelData,
+            updateHotelData : _updateHotelData,
             setSession: _setSession,
             closeSession: _closeSession,
             getSession: _getSession
@@ -138,6 +139,44 @@
             return listaHoteles; 
         }
 
+        function _updateHotelData(hotelData) {
+            let response;
+
+            let request = $.ajax({
+                url: 'http://localhost:4000/api/update_hotel',
+                type: 'put',
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                dataType: 'json',
+                async: false,
+                data: {
+                    '_id' : hotelData._id,
+                    'tipoHotel' : hotelData.tipoHotel,
+                    'nombreHotel' : hotelData.nombreHotel,
+                    'foto' : hotelData.foto,
+                    'latitud' : hotelData.latitud,
+                    'longitud' : hotelData.longitud,
+                    'provincia' : JSON.stringify(hotelData.provincia),
+                    'canton' : JSON.stringify(hotelData.canton),
+                    'distrito' : JSON.stringify(hotelData.distrito),
+                    'direccion' : hotelData.direccion,
+                    'telefonoServicioCliente' : hotelData.telefonoServicioCliente,
+                    'correoServicioCliente' : hotelData.correoServicioCliente,
+                    'telefonoReservacion' : hotelData.telefonoReservacion,
+                    'correoReservacion' : hotelData.correoReservacion
+                }
+            });
+
+            request.done((res) => {
+                response = res.success;
+                console.log(res.msj);
+            });
+            request.fail((error) => {
+                response = error;
+                console.log('Ocurrió un error');
+            });
+
+            return response;
+        }
 
         function _setSession(value) {
             let response = true;

@@ -33,7 +33,7 @@
           </div>
           <div class="form-group col-md-6">
             <label for="txtname">Nombre del hotel</label>
-            <input type="text" id="txtname" class="form-control" name="campoNombre" ng-model="vm.nuevoHotel.nombreHotel" required>
+            <input type="text" id="txtname" class="form-control" name="campoNombre" required ng-model="vm.nuevoHotel.nombreHotel" required>
             <div ng-messages="formRegisterHotel.campoNombre.$error" role="alert">
               <div ng-message="required">
                 <small class="form-text text-muted">Este campo es requerido</small>
@@ -115,7 +115,7 @@
   
           <div class="form-group col-md-6">
             <label for="filePhoto">Fotografía del hotel</label>
-            <input type="file" class="form-control-file" id="filePhoto" files-input ng-model="vm.nuevoHotel.foto">
+            <input type="file" class="form-control-file" required id="filePhoto" files-input ng-model="vm.nuevoHotel.foto">
           </div>
         </div>
   
@@ -131,7 +131,7 @@
   
           <div class="form-group col-md-6">
             <label for="txtNombre2">Telefono del hotel</label>
-            <input type="text" id="txtNombre2" class="form-control" name="campoTelefonoHotel" ng-model="vm.nuevoHotel.telefonoServicioCliente" pattern="[0-9]+">
+            <input type="text" id="txtNombre2" class="form-control" name="campoTelefonoHotel" ng-model="vm.nuevoHotel.telefonoServicioCliente" pattern="[0-9]+" >
             <div ng-messages="formRegisterHotel.campoTelefonoHotel.$error" role="alert">
               <div ng-message="pattern">
                 <small class="form-text text-muted">Formato incorrecto</small>
@@ -159,7 +159,7 @@
   
           <div class="form-group col-md-6">
             <label for="txtApellido2">Telefono de reservaciones</label>
-            <input type="text" id="txtApellido2" class="form-control" name="campoSegundoApellido" ng-model="vm.nuevoHotel.telefonoReservacion">
+            <input type="text" id="txtApellido2" class="form-control" name="campoSegundoApellido" requiredng-model="vm.nuevoHotel.telefonoReservacion">
           </div>
   
           <div class="form-group col-md-6">

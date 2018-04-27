@@ -8,8 +8,11 @@
 
     function ServicioHotel($http, $log, dataStorageFactory) {
         const publicUserAPI = {
-            setHotel : _setHotel,
-            getHotel : _getHotel
+            setHotel: _setHotel,
+            updateHotel: _updateHotel,
+            getHotel : _getHotel,
+            getHotelesPorTipo: _getHotelesPorTipo,
+            getHotelPorId: _getHotelPorId
         }
         return publicUserAPI;
 
@@ -44,6 +47,36 @@
             });
 
             return hotelList;
+        }
+
+        function _updateHotel(hotelData) {
+            let hotelList = _getHotel(),
+                success;
+            success = dataStorageFactory.updateHotelData(hotelData);
+            return success;
+        }
+
+        function _getHotelesPorTipo(tipoHotel) {
+            let listaHoteles = _getHotel(),
+                listaFiltrada = [];
+
+            for (let i = 0; i < listaHoteles.length; i++) {
+                if (listaHoteles[i].getTipoHotel() == tipoHotel) {
+                    listaFiltrada.push(listaHoteles);
+                }
+            }
+            return listaFiltrada;
+        }
+
+        function _getHotelPorId(idHotel) {
+            let listaHoteles = _getHotel(),
+                hotel;
+            for (let i = 0; i < listaHoteles.length; i++) {
+                if (listaHoteles[i].getId() == idHotel) {
+                    hotel = listaHoteles[i];
+                }
+            }
+            return hotel;
         }
     }
 })();

@@ -49,43 +49,18 @@
         });
       }
   
-      vm.clienteNuevo = {};
-      vm.tarjetaNUeva
-      
-      vm.registrarCliente= (pclienteNuevo) => {
-  
-        let rol = 5;
-  
-        // console.log(pclienteNuevo);
-  
-        let objTarjeta = new Tarjeta(pclienteNuevo.tipoTarjeta, pclienteNuevo.nombreTarjeta, pclienteNuevo.numeroTarjeta, pclienteNuevo.cvvTarjeta, pclienteNuevo.fechaTarjeta);
-  
-        let objNuevoCliente = new Cliente(pclienteNuevo.nombre, pclienteNuevo.segundoNombre, pclienteNuevo.primerApellido, pclienteNuevo.segundoApellido, pclienteNuevo.cedula, pclienteNuevo.fecha,  pclienteNuevo.sexo, pclienteNuevo.ubicacion, pclienteNuevo.provincia.name, pclienteNuevo.canton.name, pclienteNuevo.distrito.name, pclienteNuevo.direccion,  pclienteNuevo.correo, pclienteNuevo.contrasenna, rol, pclienteNuevo.telefono);
-        
-        objNuevoCliente.agregarTarjetas(objTarjeta);
-        
-        // console.log(objNuevoCliente);
-        // console.log(objTarjeta);
-        
-        let registro = servicioUsuarios.agregarUsuario(objNuevoCliente);
-  
-        if(registro == true){
-          swal({
-            title: "Registro exitoso",
-            text: "Cliente registrado correctamente",
-            icon: "success",
-            button: "Aceptar"
-          });
-          vm.clienteNuevo = null;
-          // $state.go('landingPage');
-        }else{
-          swal({
-            title: "Ha ocurrido un Error",
-            text: "No sea tonto, el cliente ya se encuentra registrado",
-            icon: "error",
-            button: "Aceptar"
-          });
-        }
+      vm.listaHoteles = ServicioHotel.getHotel();
+
+      vm.filtarListaPorTIpo = (tipoHotel) => {
+        vm.listaHoteles = ServicioHotel.getHotelesPorTipo(tipoHotel);
+      }
+
+      vm.verHotel = (hotel) => {
+        $state.go('main.verHotel', {idHotel: hotel.getId()})
+      }
+
+      vm.editar = (hotel) => {
+        $state.go('main.modificarHoteles', {idHotel: hotel.getId()})
       }
     }
   })();

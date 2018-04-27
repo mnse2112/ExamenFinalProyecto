@@ -23,7 +23,7 @@
         if (success == true){
             swal({
                 tittle: "Registro exitoso",
-                text: "Usuario registrado correctamente",
+                text: "Usuario ha sido registrado correctamente",
                 icon: "success",
                 button: "Aceptar",
             });
